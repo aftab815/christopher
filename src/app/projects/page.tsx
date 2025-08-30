@@ -18,14 +18,24 @@ import Image5 from "@/assets/projects/image5.jpeg";
 import Image6 from "@/assets/projects/image6.jpeg";
 import BGImage from "@/assets/projects/background.jpg";
 
+// types
+interface ScrollInfo {
+  scrollPosition: number;
+  maxScroll: number;
+  scrollPercentage: number;
+  direction: "left" | "right";
+}
+
 export default function Projects() {
   const scrollContainerRef = useRef<HorizontalScrollContainerRef>(null);
 
-  const handleScrollChange = () => {
+  const handleScrollChange = (info: ScrollInfo) => {
     // Scroll change handler for future use
   };
 
-  // Removed unused scrollToStart function
+  const scrollToStart = () => {
+    scrollContainerRef.current?.resetScroll();
+  };
 
   return (
     <div className='relative min-h-screen overflow-hidden'>
@@ -34,200 +44,141 @@ export default function Projects() {
         <Image
           src={BGImage}
           alt='Background image of projects'
-          className='hidden md:block w-full h-full object-cover min-w-full min-h-full'
-          priority
-          quality={85}
-          placeholder='blur'
-          sizes="100vw"
+          className='w-full h-full object-cover min-w-full min-h-full'
         />
-        <div className='md:hidden w-full h-full relative'>
-          <Image
-            src='/media/mobile projects bg.png'
-            alt='Mobile background image of projects'
-            className='object-cover'
-            fill
-            priority
-            quality={85}
-            sizes="100vw"
-          />
-        </div>
       </div>
 
       {/* Header with Logo and Menu */}
-      <Header logo={Logo} buttonClassName='text-[#d5d5c8] font-[300] text-[13px] uppercase tracking-wider' />
+      <Header logo={Logo} buttonClassName='text-[#D6D5C9]' />
 
       {/* Main Content */}
-      <main className='relative z-10 container pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-40 pl-0'>
-        <HorizontalScrollContainer ref={scrollContainerRef} onScrollChange={handleScrollChange}>
+      <main className='relative z-10 min-h-[calc(100vh-80px)] overflow-y-auto pt-32 sm:pt-36 md:pt-40 lg:pt-44 xl:pt-48'>
+        <HorizontalScrollContainer ref={scrollContainerRef} onScrollChange={handleScrollChange} className='w-full'>
           {/* Section 1: Our Projects */}
-          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full max-w-[900px] px-4 sm:px-6 md:pl-0 lg:pl-0 text-center md:text-left space-y-4'>
-            <h1 className='text-[#d5d5c8] font-serif text-[24px] uppercase tracking-wider leading-tight'>OUR PROJECTS</h1>
-            
-            <div className='space-y-2 mx-auto md:mx-0 max-w-[90%] md:max-w-full'>
-              <h2 className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>Introducing a New Model for Living</h2>
+          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full px-6 md:pl-12 lg:pl-20 text-center md:text-left'>
+            <h1 className='text-[#e7e7dc] text-[24px] font-serif uppercase tracking-wider mb-4'>OUR PROJECTS</h1>
+            <h2 className='text-[#e7e7dc] font-light text-[16px] leading-relaxed mb-4'>
+              Introducing a New Model for Living
+            </h2>
 
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
+            <div className='space-y-3 text-center md:text-left'>
+              <p className='text-[#e7e7dc] font-light text-[16px] leading-relaxed'>
                 Our work goes beyond design — it&apos;s about reimagining what a home can feel like. Each project is
                 shaped by a philosophy rooted in simplicity, natural flow, and emotional connection. We build spaces that
                 restore, calm, and support the real lives of the people inside them.
               </p>
 
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
+              <p className='text-[#e7e7dc] font-light text-[16px] leading-relaxed'>
                 But more than that, our goal is to expand a model of living that&apos;s regenerative, timeless, and deeply
                 human. This is slow architecture — built with care, not convention.
               </p>
+            </div>
 
-              <div className='pt-2 space-y-2'>
-                <div>
-                  <h3 className='text-[#d5d5c8] font-[300] text-base font-medium'>THE QUARRY</h3>
-                  <div className='w-8 h-px bg-[#d5d5c8]/40 mt-2 mx-auto md:mx-0'></div>
-                </div>
-              </div>
+            <div className='mt-6'>
+              <h2 className='text-[#e7e7dc] font-light text-[16px] uppercase tracking-wider'>THE QUARRY</h2>
+              <div className='w-8 h-px bg-white/50 mt-1'></div>
             </div>
           </div>
 
           {/* Images 1 & 2 for Our Projects section */}
-          <div className='flex flex-col gap-4 lg:ml-[1vw] w-full px-4 sm:px-6 md:pl-0 lg:pl-0 my-6 lg:my-0 items-center md:items-start'>
+          <div className='flex flex-col gap-3 w-full pl-6 pr-6 md:pl-12 lg:pl-20 my-8 lg:my-0'>
             <ImageZoom
               src={Image1}
-              alt='Interior design project showing a modern living space'
+              alt=''
               className='w-full lg:h-full h-auto object-cover'
-              containerClassName='relative lg:max-w-[50vw] lg:min-w-[350px] lg:h-[29vh] w-full h-auto'
-              loading='lazy'
-              quality={85}
+              containerClassName='relative lg:max-w-[50vw] lg:min-w-[350px] lg:h-[22vh] w-full h-auto'
             />
             <ImageZoom
               src={Image2}
-              alt='Interior design project showing a contemporary kitchen area'
+              alt=''
               className='w-full lg:h-full h-auto object-cover'
-              containerClassName='relative lg:max-w-[50vw] lg:min-w-[350px] lg:h-[29vh] w-full h-auto'
-              loading='lazy'
-              quality={85}
+              containerClassName='relative lg:max-w-[50vw] lg:min-w-[350px] lg:h-[22vh] w-full h-auto'
             />
           </div>
 
           {/* Section 2: The Quarry Details */}
-          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full max-w-[900px] px-4 sm:px-6 md:pl-0 lg:pl-0 text-center md:text-left space-y-4'>
-            <h1 className='text-[#d5d5c8] font-serif text-[24px] uppercase tracking-wider leading-tight'>The Quarry</h1>
-            <div className='space-y-2 mx-auto md:mx-0 max-w-[90%] md:max-w-full'>
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
-                Nestled in a field of wildflowers, The Meadow is a celebration of organic forms and natural light. The
-                structure&apos;s gentle curves and warm wood tones create a sense of movement that mirrors the surrounding
-                landscape.
+          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full px-6 md:pl-12 lg:pl-20 text-center md:text-left'>
+            <h1 className='text-[#e7e7dc] text-[24px] font-serif uppercase tracking-wider mt-12 mb-2'>THE QUARRY</h1>
+            <h2 className='text-[#e7e7dc] font-light text-xl mb-3 leading-tight'>
+              The Quarry – Where Architecture Meets Regeneration
+            </h2>
+            
+            <p className='text-[#e7e7dc] font-light text-[14px] text-opacity-80 mb-4'>
+              14–20% Fixed Return | Passivhaus-Standard | Designed to Endure
+            </p>
+            
+            <div className='space-y-3 text-center md:text-left'>
+              <p className='text-[#e7e7dc] font-light text-[16px] leading-relaxed'>
+                Set in the Lancashire hills, The Quarry transforms a disused industrial site into a 3,300 sq ft home that
+                marries quiet luxury with environmental leadership. Built to Passivhaus standards, it offers peak energy
+                efficiency, beauty, and long-term performance.
               </p>
 
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
-                Designed for connection—to nature, to art, and to each other—this home features open, flowing spaces that
-                encourage gathering and contemplation in equal measure. It&apos;s a place where every detail tells a story of
-                craftsmanship and intention.
+              <p className='text-[#e7e7dc] font-light text-[16px] leading-relaxed'>
+                Rooted in Christopher&apos;s aesthetic and philosophical influences — from Wabi-Sabi to biophilia — the
+                design brings nature inward and emotion to the forefront. Light, material, and movement are all treated as
+                collaborators, not afterthoughts.
               </p>
 
-              <div className='pt-2 space-y-4'>
-                <div>
-                  <h2 className='text-[#d5d5c8] font-[300] text-lg uppercase'>Get in Touch</h2>
-                  <div className='w-8 h-px bg-[#d5d5c8]/50 mt-2'></div>
-                </div>
-
-                <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
-                  Interested in working together? We&apos;d love to hear about your project.
-                </p>
-
-                <Link
-                  href='/contact'
-                  className='text-[#d5d5c8] font-[300] text-base hover:underline transition-all duration-300 inline-block'
-                >
-                  Start Your Journey →
-                </Link>
-              </div>
+              <p className='text-[#e7e7dc] font-light text-[16px] leading-relaxed'>
+                Every line is drawn with intention. Local stone, minimal interventions, and breathable textures make the
+                home feel like it&apos;s always belonged.
+              </p>
             </div>
-            <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
-              Rooted in Christopher&apos;s aesthetic and philosophical influences — from Wabi-Sabi to biophilia — the design
-              brings nature inward and emotion to the forefront. Light, material, and movement are all treated as
-              collaborators, not afterthoughts.
-            </p>
-            <p className='text-[#d6d5c9] font-[300] text-base leading-relaxed text-center md:text-left'>
-              Every line is drawn with intention. Local stone, minimal interventions, and breathable textures make the
-              home feel like it&apos;s always belonged.
-            </p>
           </div>
 
           {/* Images 3 & 4 for The Quarry section */}
-          <div className='flex flex-col gap-4 lg:ml-[1vw] w-full px-4 sm:px-6 md:pl-0 lg:pl-0 my-6 lg:my-0 items-center md:items-start'>
+          <div className='flex flex-col gap-3 w-full pl-6 pr-6 md:pl-12 lg:pl-20 my-8 lg:my-0'>
             <ImageZoom
               src={Image3}
-              alt='Interior design project showing a modern bedroom with natural light'
+              alt=''
               className='w-full lg:h-full h-auto object-cover'
-              containerClassName='relative lg:max-w-[50vw] lg:min-w-[350px] lg:h-[29vh] w-full h-auto'
-              loading='lazy'
-              quality={85}
+              containerClassName='relative lg:max-w-[50vw] lg:min-w-[350px] lg:h-[22vh] w-full h-auto'
             />
             <ImageZoom
               src={Image4}
-              alt='Interior design project featuring a luxurious bathroom design'
+              alt=''
               className='w-full lg:h-full h-auto object-cover'
-              containerClassName='relative lg:max-w-[50vw] lg:min-w-[350px] lg:h-[29vh] w-full h-auto'
-              loading='lazy'
-              quality={85}
+              containerClassName='relative lg:max-w-[50vw] lg:min-w-[350px] lg:h-[22vh] w-full h-auto'
             />
           </div>
 
-          {/* Section 3: The Cliffs Details */}
-          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full max-w-[900px] px-4 sm:px-6 md:pl-6 lg:pl-8 text-center md:text-left space-y-6'>
-            <div className='space-y-4 mx-auto md:mx-0 max-w-[90%] md:max-w-full'>
-              <p className='text-[#d6d5c9] font-[300] text-base leading-relaxed text-center md:text-left'>
-              The Quarry redefines modern living with its seamless integration of natural materials and clean lines. Each
-              space is designed to enhance the connection between indoor comfort and the surrounding landscape, creating
-              a sanctuary that feels both luxurious and organic.
-            </p>
-
-            <p className='text-[#d6d5c9] font-[300] text-base leading-relaxed text-center md:text-left'>
-              Every detail, from the hand-selected stone to the custom millwork, reflects a commitment to craftsmanship
-              and sustainability. The result is a home that stands as a testament to thoughtful, intentional design.
-            </p>
-
-              <div className='pt-4'>
-                <h2 className='text-[#d6d5c9] font-[300] text-lg uppercase text-center md:text-left'>THE CLIFFS</h2>
-                <div className='w-8 h-px bg-[#d5d5c8]/50 mt-2 mx-auto md:mx-0'></div>
-              </div>
-            </div>
-          </div>
-
           {/* section 3: Investment Details */}
-          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full max-w-[900px] px-4 md:pl-6 lg:pl-8 mx-auto md:mx-0 max-w-[90%] md:max-w-full'>
-            <p className='text-[#d6d5c9] font-[300] text-base leading-relaxed text-center md:text-left'>
-              As an investment, The Quarry offers a fixed return of 14–20% annually, with capital protected via a
-              ring-fenced SPV and detailed development guarantees. Investors are not just backing a build — they&#39;re
-              aligning with a new, grounded vision of sustainable living.
-            </p>
-            <br />
-            <p className='text-[#d6d5c9] font-[300] text-base leading-relaxed text-center md:text-left'>
-              This is a home that feels like a turning point — for design, for lifestyle, and for what comes next.
-            </p>
+          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full px-6 md:pl-12 lg:pl-20 text-center md:text-left'>
+            <div className='space-y-3 text-center md:text-left'>
+              <p className='text-[#e7e7dc] font-light text-[16px] leading-relaxed'>
+                As an investment, The Quarry offers a fixed return of 14–20% annually, with capital protected via a
+                ring-fenced SPV and detailed development guarantees. Investors are not just backing a build — they&apos;re
+                aligning with a new, grounded vision of sustainable living.
+              </p>
+
+              <p className='text-[#e7e7dc] font-light text-[16px] leading-relaxed'>
+                This is a home that feels like a turning point — for design, for lifestyle, and for what comes next.
+              </p>
+            </div>
 
             {/* get in touch */}
-            <Link href={"/contact"}>
-              <h2 className='text-[#d6d5c9] font-[300] text-lg uppercase mt-48 text-center md:text-left'>Get in Touch</h2>
-              <div className='-mt-2 w-8 h-px bg-white/50'></div>
+            <Link href={"/contact"} className='block mt-12 mb-8 group'>
+              <h2 className='text-[#e7e7dc] font-light text-[16px] uppercase tracking-wider group-hover:opacity-80 transition-opacity'>
+                Get in Touch
+              </h2>
+              <div className='w-8 h-px bg-white/50 mt-1'></div>
             </Link>
           </div>
 
           {/* Images 5 & 6 for Investment Details section */}
-          <div className='flex flex-col gap-6 lg:ml-[2vw] w-full px-6 lg:px-0 my-10 lg:my-0'>
+          <div className='flex flex-col gap-3 w-full pl-6 pr-6 md:pl-12 lg:pl-20 my-8 lg:my-0'>
             <ImageZoom
               src={Image5}
-              alt='Investment property showcasing architectural details and design'
+              alt=''
               className='w-full lg:h-full h-auto object-cover'
-              containerClassName='relative lg:max-w-[50vw] lg:min-w-[350px] lg:h-[29vh] w-full h-auto'
-              loading='lazy'
-              quality={85}
+              containerClassName='relative lg:max-w-[50vw] lg:min-w-[350px] lg:h-[22vh] w-full h-auto'
             />
             <ImageZoom
               src={Image6}
-              alt='Investment property exterior with landscape design'
+              alt=''
               className='w-full lg:h-full h-auto object-cover'
-              containerClassName='relative lg:max-w-[50vw] lg:min-w-[350px] lg:h-[29vh] w-full h-auto'
-              loading='lazy'
-              quality={85}
+              containerClassName='relative lg:max-w-[50vw] lg:min-w-[350px] lg:h-[22vh] w-full h-auto'
             />
           </div>
           <div className='hidden lg:block lg:min-w-[2vw]'></div>

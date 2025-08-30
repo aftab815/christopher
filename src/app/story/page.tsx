@@ -47,22 +47,24 @@ export default function Story() {
           sizes="100vw"
         />
         <div className='md:hidden w-full h-full'>
-          <Image
-            src='/media/story mobile bg.png'
-            alt='Mobile background image of story'
-            className='w-full h-full object-cover'
-            width={1080}
-            height={1920}
-            priority
-            quality={85}
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-            }}
-          />
+          <div className='flex flex-col gap-3 w-full pl-8 pr-6 md:pl-16 lg:pl-32 my-8'>
+            <Image
+              src='/media/story mobile bg.png'
+              alt='Mobile background image of story'
+              className='w-full h-full object-cover'
+              width={1080}
+              height={1920}
+              priority
+              quality={85}
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+              }}
+            />
+          </div>
         </div>
       </div>
 
@@ -70,49 +72,34 @@ export default function Story() {
       <Header logo={Logo} buttonClassName='text-[#d6d5c9] font-[300] text-[13px] uppercase tracking-wider' />
 
       {/* Main Content */}
-      <main className='relative z-10 container pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-40 pl-0'>
-        <HorizontalScrollContainer ref={scrollContainerRef} onScrollChange={handleScrollChange}>
+      <main className='relative z-10 min-h-[calc(100vh-80px)] overflow-y-auto pt-32 sm:pt-36 md:pt-40 lg:pt-44 xl:pt-48'>
+        <HorizontalScrollContainer ref={scrollContainerRef} onScrollChange={handleScrollChange} className='w-full'>
           {/* text content */}
-          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full max-w-[900px] px-4 sm:px-6 md:pl-0 lg:pl-0 text-center md:text-left space-y-4'>
-            <h1 className='text-[#d5d5c8] font-serif text-[24px] uppercase tracking-wider leading-tight'>OUR STORY</h1>
+          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full px-6 md:pl-16 lg:pl-32 space-y-2 mt-8 text-center md:text-left'>
+            <h1 className='text-[#d5d5c8] font-serif text-[24px] uppercase tracking-wider leading-tight mb-6'>OUR STORY</h1>
             
-            <div className='space-y-2 mx-auto md:mx-0 max-w-[90%] md:max-w-full'>
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
-                Design should hold you, not overwhelm you.
+            <div className='space-y-3 text-center md:text-left'>
+              <p className='text-[#d5d5c8] font-light text-[16px] leading-relaxed'>
+                Design should hold you, not overwhelm you. My approach to design isn&apos;t rooted in trends. It&apos;s rooted in experience, intuition, and an ongoing relationship with stillness, light, and nature.
               </p>
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
-                My approach to design isn&apos;t rooted in trends.
-              </p>
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
-                It&apos;s rooted in experience, intuition, and an ongoing
-              </p>
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
-                relationship with stillness, light, and nature.
-              </p>
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed pt-2'>
-                Everything I create begins with one question:
-              </p>
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed italic'>
-                How should this space make you feel?
-              </p>
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
-                That feeling guides every decision.
+              <p className='text-[#d5d5c8] font-light text-[16px] leading-relaxed pt-2'>
+                Everything I create begins with one question: <span className='italic'>How should this space make you feel?</span> That feeling guides every decision.
               </p>
             </div>
             
-            <div className='pt-2 flex flex-col items-center md:items-start'>
+            <div className='mt-2'>
               <h3 
                 onClick={navigateToProjects}
-                className='text-[#d5d5c8] font-[300] text-base uppercase tracking-wider hover:underline cursor-pointer transition-all duration-300 hover:opacity-80 active:opacity-60'
+                className='text-[#d5d5c8] font-[300] text-base uppercase tracking-wider cursor-pointer hover:opacity-80 transition-opacity duration-300'
               >
                 FUTURE PROJECTS
               </h3>
-              <div className='w-8 h-px bg-[#d5d5c8]/50 mt-2'></div>
+              <div className='w-8 h-px bg-[#d5d5c8]/50 mt-1'></div>
             </div>
           </div>
 
           {/* image 1 */}
-          <div className='relative lg:max-w-[50vw] lg:min-w-[500px] lg:h-[60vh] lg:ml-[1vw] lg:mt-4 w-full h-auto px-4 sm:px-6 md:px-0 my-8 sm:my-10 lg:my-0'>
+          <div className='relative lg:max-w-[50vw] lg:min-w-[400px] lg:h-[45vh] lg:ml-[1vw] w-full h-auto px-4 sm:px-6 md:px-0 mt-12 mb-8 lg:my-0'>
             <div className='relative overflow-hidden rounded-lg'>
               <ImageZoom 
                 src={Image1} 
@@ -123,9 +110,9 @@ export default function Story() {
           </div>
 
           {/* text content 2 */}
-          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full max-w-[900px] px-4 sm:px-6 md:pl-6 lg:pl-8 text-center md:text-left space-y-6'>
+          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full px-6 md:pl-16 lg:pl-32 space-y-2 mt-8 text-center md:text-left'>
             <div className='bg-[#d5d5c8]/10 p-6 rounded-lg border border-[#d5d5c8]/20'>
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed italic'>
+              <p className='text-[#d5d5c8] font-light text-[16px] leading-snug italic'>
                 &ldquo;Design should hold you, not overwhelm you.&rdquo;
               </p>
             </div>
@@ -140,74 +127,70 @@ export default function Story() {
           </div>
 
           {/* image 2 */}
-          <div className='relative lg:max-w-[50vw] lg:min-w-[500px] lg:h-[60vh] lg:ml-[1vw] lg:mt-4 w-full h-auto px-0 my-6 sm:my-8 lg:my-0'>
+          <div className='relative lg:max-w-[50vw] lg:min-w-[400px] lg:h-[45vh] lg:ml-[1vw] w-full h-auto px-4 sm:px-6 md:px-0 mt-12 mb-8 lg:my-0'>
             <div className='relative overflow-hidden'>
               <ImageZoom src={Image2} alt='Story Image 2' className='w-full lg:h-[60vh] h-[200px] sm:h-[250px] md:h-[300px] object-cover' />
             </div>
           </div>
 
           {/* text content 3 */}
-          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full max-w-[900px] px-4 sm:px-6 md:pl-6 lg:pl-8 text-center md:text-left space-y-6'>
-            <h1 className='text-[#d5d5c8] font-serif text-[24px] uppercase tracking-wider leading-tight'>OUR STORY</h1>
+          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full px-6 md:pl-16 lg:pl-32 space-y-2 mt-8 text-center md:text-left'>
+            <h1 className='text-[#d5d5c8] font-serif text-[24px] uppercase tracking-wider leading-tight mb-6'>OUR STORY</h1>
             
-            <div className='space-y-4'>
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
-                Nature has been my greatest teacher. The way light filters through leaves, how stone ages gracefully, the rhythm of seasons—these are the patterns I bring into every design.
-              </p>
-              
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
-                I&apos;ve learned that the most beautiful spaces are those that honor these natural rhythms and create harmony between the built environment and the world around us.
+            <div className='space-y-4 text-center md:text-left'>
+              <p className='text-[#d5d5c8] font-light text-[16px] leading-relaxed'>
+                Nature has been my greatest teacher. The way light filters through leaves, how stone ages gracefully, the rhythm of seasons—these are the patterns I bring into every design. I&apos;ve learned that the most beautiful spaces are those that honor these natural rhythms and create harmony between the built environment and the world around us.
               </p>
             </div>
           </div>
 
           {/* image 3 */}
-          <div className='relative lg:max-w-[50vw] lg:min-w-[500px] lg:h-[60vh] lg:ml-[1vw] lg:mt-4 w-full h-auto px-0 my-6 sm:my-8 lg:my-0'>
+          <div className='relative lg:max-w-[50vw] lg:min-w-[400px] lg:h-[45vh] lg:ml-[1vw] w-full h-auto px-4 sm:px-6 md:px-0 mt-12 mb-8 lg:my-0'>
             <div className='relative overflow-hidden'>
               <ImageZoom src={Image3} alt='Story Image 3' className='w-full lg:h-[60vh] h-[200px] sm:h-[250px] md:h-[300px] object-cover' />
             </div>
           </div>
 
           {/* text content 4 */}
-          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full max-w-[900px] px-4 sm:px-6 md:pl-6 lg:pl-8 text-center md:text-left space-y-6'>
-            <div className='space-y-6'>
+          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full px-6 md:pl-16 lg:pl-32 space-y-2 mt-8 text-center md:text-left'>
+            <div className='space-y-2 text-center md:text-left'>
               <div className='bg-[#d5d5c8]/10 p-6 rounded-lg border border-[#d5d5c8]/20'>
-                <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed italic'>
+                <p className='text-[#d5d5c8] font-light text-[16px] leading-snug italic'>
                   &ldquo;How should this space make you feel?&rdquo;
                 </p>
               </div>
               
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
+              <p className='text-[#d5d5c8] font-light text-[16px] leading-snug'>
                 This question is the foundation of my design process. Before I draw a single line or choose a material, I need to understand the emotional journey you want to experience.
               </p>
               
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
+              <p className='text-[#d5d5c8] font-light text-[16px] leading-snug'>
                 Whether it&apos;s a sense of calm, inspiration, connection, or joy—every design decision serves that feeling. The result is spaces that don&apos;t just look beautiful, but feel right.
               </p>
             </div>
           </div>
 
           {/* image 4 */}
-          <div className='relative lg:max-w-[50vw] lg:min-w-[500px] lg:h-[60vh] lg:ml-[1vw] lg:mt-4 w-full h-auto px-0 my-6 sm:my-8 lg:my-0'>
+          <div className='relative lg:max-w-[50vw] lg:min-w-[400px] lg:h-[45vh] lg:ml-[1vw] w-full h-auto px-4 sm:px-6 md:px-0 mt-12 mb-8 lg:my-0'>
             <div className='relative overflow-hidden'>
               <ImageZoom src={Image4} alt='Story Image 4' className='w-full lg:h-[60vh] h-[200px] sm:h-[250px] md:h-[300px] object-cover' />
             </div>
           </div>
 
           {/* final text content */}
-          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full max-w-[900px] px-4 sm:px-6 md:pl-6 lg:pl-8 text-center md:text-left space-y-6'>
-            <div className='space-y-6'>
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
+          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full px-6 md:pl-16 lg:pl-32 space-y-2 mt-8 text-center md:text-left'>
+            <div className='space-y-2 text-center md:text-left'>
+              <p className='text-[#d5d5c8] font-light text-[16px] leading-snug'>
                 My story is one of continuous learning and deepening understanding. Every project teaches me something new about how spaces can serve, inspire, and transform the people who inhabit them.
               </p>
               
               <div className='bg-[#d5d5c8]/10 p-6 rounded-lg border border-[#d5d5c8]/20'>
-                <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed italic'>
+                <p className='text-[#d5d5c8] font-light text-[16px] leading-snug italic'>
                   &ldquo;That feeling guides every decision.&rdquo;
                 </p>
               </div>
               
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
+              <p className='text-[#d5d5c8] font-light text-[16px] leading-snug'>
                 This is my promise to you: every space I design will be guided by feeling, rooted in nature, and created with the intention to hold you gently, not overwhelm you.
               </p>
             </div>

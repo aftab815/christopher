@@ -90,8 +90,8 @@ export default function Home() {
       <Header logo={Logo} />
 
       {/* Main Content - Professional spacing and alignment */}
-      <main className='relative z-10 flex items-center justify-center min-h-screen px-3 sm:px-6 pt-8 sm:pt-12 md:pt-16 lg:pt-20 xl:pt-24'>
-        <div className='max-w-5xl mx-auto text-center px-2 sm:px-4 w-full'>
+      <main className='relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 pt-8 sm:pt-12 md:pt-16 lg:pt-20 xl:pt-24'>
+        <div className='max-w-5xl mx-auto text-center w-full px-4 sm:px-6'>
           {/* Quote Container with smooth transitions */}
           <div className='flex flex-col justify-center items-center py-4 sm:py-8'>
             <div 

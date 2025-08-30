@@ -57,50 +57,50 @@ export default function Home() {
       <Header logo={Logo} buttonClassName='text-[#d6d5c9] font-[300] text-[13px] uppercase tracking-wider' />
 
       {/* Main Content */}
-      <main className='relative z-10 container pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-40 pl-0'>
-        <HorizontalScrollContainer ref={scrollContainerRef} onScrollChange={handleScrollChange}>
+      <main className='relative z-10 min-h-[calc(100vh-80px)] overflow-y-auto pt-24 sm:pt-32 md:pt-36 lg:pt-40 xl:pt-44 pb-8'>
+        <HorizontalScrollContainer ref={scrollContainerRef} onScrollChange={handleScrollChange} className='w-full h-full'>
           {/* text content */}
-          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full max-w-[900px] px-4 sm:px-6 md:pl-0 lg:pl-0 text-center md:text-left space-y-2'>
-            <h1 className='text-[#d5d5c8] font-serif text-[24px] uppercase tracking-wider leading-tight'>THE ETHOS</h1>
-            <div className='space-y-1'>
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
+          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full max-w-[900px] pl-12 pr-12 space-y-1 mt-12 mb-16 text-center md:text-left'>
+            <h1 className='text-[#d5d5c8] text-[24px] font-serif uppercase tracking-wider mb-6'>THE ETHOS</h1>
+            <div className='space-y-1 flex flex-col items-center md:items-start'>
+              <p className='text-[#d5d5c8] font-light text-[16px] leading-snug'>
                 Our work is guided by feeling.
               </p>
 
-              <div className='pt-1'>
-                <h2 className='text-[#d5d5c8] font-[300] text-lg uppercase tracking-wider'>PEACE</h2>
-                <div className='w-8 h-px bg-[#d5d5c8]/50 mt-2 mx-auto md:mx-0'></div>
+              <div className='mt-1'>
+                <h2 className='text-[#d5d5c8] font-light text-[16px] leading-relaxed mb-2'>PEACE</h2>
+                <div className='w-8 h-px bg-[#d5d5c8]/50 mt-0.5 mb-1 mx-auto md:mx-0'></div>
               </div>
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
+              <p className='text-[#d5d5c8] font-light text-[16px] leading-snug'>
                 The design should ground you. Light, air, and materials that calm the nervous system.
               </p>
 
                 {/* vertical bar */}
-                <div className='w-8 h-px bg-[#d5d5c8]/40 mx-auto md:mx-0'></div>
+                <div className='w-8 h-px bg-[#d5d5c8]/40 my-0.5 mx-auto md:mx-0'></div>
 
-              <div className='pt-1'>
+              <div className='mt-1'>
                 <h2 className='text-[#d5d5c8] font-[300] text-lg uppercase tracking-wider'>SIMPLICITY</h2>
-                <div className='w-8 h-px bg-[#d5d5c8]/50 mt-2 mx-auto md:mx-0'></div>
+                <div className='w-8 h-px bg-[#d5d5c8]/50 mt-0.5 mb-1 mx-auto md:mx-0'></div>
               </div>
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
+              <p className='text-[#d5d5c8] font-light text-[16px] leading-snug'>
                 Nothing extra. Everything necessary. Beauty found in restraint.
               </p>
 
                 {/* vertical bar */}
-                <div className='w-8 h-px bg-[#d5d5c8]/40 mx-auto md:mx-0'></div>
+                <div className='w-8 h-px bg-[#d5d5c8]/40 my-0.5 mx-auto md:mx-0'></div>
 
-              <div className='pt-1'>
+              <div className='mt-1'>
                 <h2 className='text-[#d5d5c8] font-[300] text-lg uppercase tracking-wider'>FLOW</h2>
-                <div className='w-8 h-px bg-[#d5d5c8]/50 mt-2 mx-auto md:mx-0'></div>
+                <div className='w-8 h-px bg-[#d5d5c8]/50 mt-0.5 mb-1 mx-auto md:mx-0'></div>
               </div>
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
+              <p className='text-[#d5d5c8] font-light text-[16px] leading-snug'>
                 From one room to the next, one breath to the next—our work moves like water.
               </p>
             </div>
           </div>
 
           {/* image 1 - Peace & Serenity */}
-          <div className='relative lg:max-w-[50vw] lg:min-w-[500px] lg:h-[60vh] lg:ml-[1vw] lg:mt-4 w-full h-auto px-4 sm:px-6 md:px-0 my-8 sm:my-10 lg:my-0 group'>
+          <div className='relative lg:max-w-[50vw] lg:min-w-[400px] lg:h-[45vh] lg:ml-[1vw] w-full h-auto px-4 sm:px-6 md:px-0 mt-16 mb-16 lg:my-0 group'>
             <div className='hidden lg:flex absolute bg-[#574f4d] text-[#d5d5c8] font-[300] text-base w-[55%] h-[50%] px-6 py-5 lg:mr-[60px] lg:-mb-[1px] bottom-0 right-0 justify-center items-center text-right leading-relaxed z-10 rounded-tl-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
               <span className='block'>
                 <strong>Peace:</strong> Natural materials that ground and calm. Stone, timber, and light work together to soothe the nervous system.
@@ -110,20 +110,20 @@ export default function Home() {
               <ImageZoom 
                 src={Image1} 
                 alt='Peace & Serenity' 
-                className='w-full lg:h-[60vh] h-[220px] sm:h-[280px] md:h-[300px] object-cover group-hover:brightness-75 transition-all duration-300' 
+                className='w-full lg:h-[50vh] h-[180px] sm:h-[220px] md:h-[250px] object-cover group-hover:brightness-75 transition-all duration-300' 
               />
             </div>
             
             {/* Mobile text below image */}
-            <div className='lg:hidden mt-4 text-center md:text-left'>
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
+            <div className='lg:hidden mt-1 text-center md:text-left'>
+              <p className='text-[#d5d5c8] font-light text-[16px] leading-snug'>
                 <strong>Peace:</strong> Natural materials that ground and calm. Stone, timber, and light work together to soothe the nervous system.
               </p>
             </div>
           </div>
 
           {/* image 2 - Simplicity & Restraint */}
-          <div className='relative lg:max-w-[50vw] lg:min-w-[500px] lg:h-[60vh] lg:ml-[1vw] lg:mt-4 w-full h-auto px-4 sm:px-6 md:px-0 my-8 sm:my-10 lg:my-0 group'>
+          <div className='relative lg:max-w-[50vw] lg:min-w-[400px] lg:h-[45vh] lg:ml-[1vw] w-full h-auto px-4 sm:px-6 md:px-0 mt-16 mb-16 lg:my-0 group'>
             <div className='hidden lg:flex absolute bg-[#574f4d] text-[#d5d5c8] font-[300] text-base w-[55%] h-[50%] px-6 py-5 lg:mr-[60px] lg:-mb-[1px] bottom-0 right-0 justify-center items-center text-right leading-relaxed z-10 rounded-tl-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
               <span className='block'>
                 <strong>Simplicity:</strong> Beauty in restraint. Clean lines and minimal elements create spaces that breathe naturally.
@@ -133,20 +133,20 @@ export default function Home() {
               <ImageZoom 
                 src={Image2} 
                 alt='Simplicity & Restraint' 
-                className='w-full lg:h-[60vh] h-[220px] sm:h-[280px] md:h-[300px] object-cover group-hover:brightness-75 transition-all duration-300' 
+                className='w-full lg:h-[50vh] h-[180px] sm:h-[220px] md:h-[250px] object-cover group-hover:brightness-75 transition-all duration-300' 
               />
             </div>
             
             {/* Mobile text below image */}
-            <div className='lg:hidden mt-4 text-center md:text-left'>
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
+            <div className='lg:hidden mt-1 text-center md:text-left'>
+              <p className='text-[#d5d5c8] font-light text-[16px] leading-snug'>
                 <strong>Simplicity:</strong> Beauty in restraint. Clean lines and minimal elements create spaces that breathe naturally.
               </p>
             </div>
           </div>
 
           {/* image 3 - Flow & Movement */}
-          <div className='relative lg:max-w-[50vw] lg:min-w-[500px] lg:h-[60vh] lg:ml-[1vw] lg:mt-4 w-full h-auto px-4 sm:px-6 md:px-0 my-8 sm:my-10 lg:my-0 group'>
+          <div className='relative lg:max-w-[50vw] lg:min-w-[400px] lg:h-[45vh] lg:ml-[1vw] w-full h-auto px-4 sm:px-6 md:px-0 mt-16 mb-16 lg:my-0 group'>
             <div className='hidden lg:flex absolute bg-[#574f4d] text-[#d5d5c8] font-[300] text-base w-[55%] h-[50%] px-6 py-5 lg:mr-[60px] lg:-mb-[1px] bottom-0 right-0 justify-center items-center text-right leading-relaxed z-10 rounded-tl-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
               <span className='block'>
                 <strong>Flow:</strong> Spaces that guide you effortlessly. Thoughtful transitions create a sense of movement and connection throughout the home.
@@ -156,20 +156,20 @@ export default function Home() {
               <ImageZoom 
                 src={Image3} 
                 alt='Flow & Movement' 
-                className='w-full lg:h-[60vh] h-[220px] sm:h-[280px] md:h-[300px] object-cover group-hover:brightness-75 transition-all duration-300' 
+                className='w-full lg:h-[50vh] h-[180px] sm:h-[220px] md:h-[250px] object-cover group-hover:brightness-75 transition-all duration-300' 
               />
             </div>
             
             {/* Mobile text below image */}
-            <div className='lg:hidden mt-4 text-center md:text-left'>
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
+            <div className='lg:hidden mt-1 text-center md:text-left'>
+              <p className='text-[#d5d5c8] font-light text-[16px] leading-snug'>
                 <strong>Flow:</strong> Spaces that guide you effortlessly. Thoughtful transitions create a sense of movement and connection throughout the home.
               </p>
             </div>
           </div>
 
           {/* image 4 - Light & Shadow */}
-          <div className='relative lg:max-w-[50vw] lg:min-w-[500px] lg:h-[60vh] lg:ml-[1vw] lg:mt-4 w-full h-auto px-4 sm:px-6 md:px-0 my-8 sm:my-10 lg:my-0 group'>
+          <div className='relative lg:max-w-[50vw] lg:min-w-[400px] lg:h-[45vh] lg:ml-[1vw] w-full h-auto px-4 sm:px-6 md:px-0 mt-16 mb-16 lg:my-0 group'>
             <div className='hidden lg:flex absolute bg-[#574f4d] text-[#d5d5c8] font-[300] text-base w-[55%] h-[50%] px-6 py-5 lg:mr-[60px] lg:-mb-[1px] bottom-0 right-0 justify-center items-center text-right leading-relaxed z-10 rounded-tl-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
               <span className='block'>
                 <strong>Light & Shadow:</strong> The interplay of light and shadow creates depth and atmosphere, changing throughout the day to shape the mood of each space.
@@ -179,20 +179,20 @@ export default function Home() {
               <ImageZoom 
                 src={Image4} 
                 alt='Light & Shadow' 
-                className='w-full lg:h-[60vh] h-[220px] sm:h-[280px] md:h-[300px] object-cover group-hover:brightness-75 transition-all duration-300' 
+                className='w-full lg:h-[50vh] h-[180px] sm:h-[220px] md:h-[250px] object-cover group-hover:brightness-75 transition-all duration-300' 
               />
             </div>
             
             {/* Mobile text below image */}
-            <div className='lg:hidden mt-4 text-center md:text-left'>
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
+            <div className='lg:hidden mt-1 text-center md:text-left'>
+              <p className='text-[#d5d5c8] font-light text-[16px] leading-snug'>
                 <strong>Light & Shadow:</strong> The interplay of light and shadow creates depth and atmosphere, changing throughout the day to shape the mood of each space.
               </p>
             </div>
           </div>
 
           {/* image 5 - Materiality */}
-          <div className='relative lg:max-w-[50vw] lg:min-w-[500px] lg:h-[60vh] lg:ml-[1vw] lg:mt-4 w-full h-auto px-4 sm:px-6 md:px-0 my-8 sm:my-10 lg:my-0 group'>
+          <div className='relative lg:max-w-[50vw] lg:min-w-[400px] lg:h-[45vh] lg:ml-[1vw] w-full h-auto px-4 sm:px-6 md:px-0 mt-16 mb-16 lg:my-0 group'>
             <div className='hidden lg:flex absolute bg-[#574f4d] text-[#d5d5c8] font-[300] text-base w-[55%] h-[50%] px-6 py-5 lg:mr-[60px] lg:-mb-[1px] bottom-0 right-0 justify-center items-center text-right leading-relaxed z-10 rounded-tl-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
               <span className='block'>
                 <strong>Materiality:</strong> Honest materials that age gracefully. We celebrate the natural beauty of wood, stone, and metal, allowing their textures and patinas to tell a story over time.
@@ -202,13 +202,13 @@ export default function Home() {
               <ImageZoom 
                 src={Image5} 
                 alt='Materiality' 
-                className='w-full lg:h-[60vh] h-[220px] sm:h-[280px] md:h-[300px] object-cover group-hover:brightness-75 transition-all duration-300' 
+                className='w-full lg:h-[50vh] h-[180px] sm:h-[220px] md:h-[250px] object-cover group-hover:brightness-75 transition-all duration-300' 
               />
             </div>
             
             {/* Mobile text below image */}
-            <div className='lg:hidden mt-4 text-center md:text-left'>
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
+            <div className='lg:hidden mt-1 text-center md:text-left'>
+              <p className='text-[#d5d5c8] font-light text-[16px] leading-snug'>
                 <strong>Materiality:</strong> Honest materials that age gracefully. We celebrate the natural beauty of wood, stone, and metal, allowing their textures and patinas to tell a story over time.
               </p>
             </div>

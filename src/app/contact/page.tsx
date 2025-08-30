@@ -70,7 +70,7 @@ export default function Contact() {
         <div className='max-w-6xl w-full'>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mt-12'>
             {/* Left Side - Contact Info */}
-            <div className='space-y-8 mt-8'>
+            <div className='space-y-1 mt-8 text-center lg:text-left'>
               <div className='font-sans font-light text-2xl text-[#574f4d] leading-relaxed'>
                 <p>Please get in touch by completing the</p>
                 <p>form or emailing:</p>
@@ -81,7 +81,7 @@ export default function Contact() {
                 </p>
                 
                 {/* Social Media Icons */}
-                <div className='flex space-x-8 mt-10'>
+                <div className='flex justify-center lg:justify-start space-x-8 mt-10'>
                   <a 
                     href='https://instagram.com' 
                     target='_blank' 
