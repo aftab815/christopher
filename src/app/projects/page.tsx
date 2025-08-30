@@ -34,7 +34,15 @@ export default function Projects() {
         <Image
           src={BGImage}
           alt='Background image of projects'
-          className='w-full h-full object-cover min-w-full min-h-full'
+          className='hidden md:block w-full h-full object-cover min-w-full min-h-full'
+        />
+        <Image
+          src='/media/mobile projects bg.png'
+          alt='Mobile background image of projects'
+          className='md:hidden w-full h-full object-cover min-w-full min-h-full'
+          width={800}
+          height={1600}
+          priority
         />
       </div>
 
