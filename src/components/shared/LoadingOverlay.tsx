@@ -11,7 +11,7 @@ type LoadingOverlayProps = {
   fadeOut?: boolean;
 };
 
-export default function LoadingOverlay({ visible = true, message = "Loading", fadeOut = false }: LoadingOverlayProps) {
+export default function LoadingOverlay({ visible = true, fadeOut = false }: LoadingOverlayProps) {
   if (!visible) return null;
   return (
     <div

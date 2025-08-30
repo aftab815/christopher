@@ -29,7 +29,7 @@ interface ScrollInfo {
 export default function Projects() {
   const scrollContainerRef = useRef<HorizontalScrollContainerRef>(null);
 
-  const handleScrollChange = (info: ScrollInfo) => {
+  const handleScrollChange = () => {
     // Scroll change handler for future use
   };
 

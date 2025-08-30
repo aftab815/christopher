@@ -52,10 +52,10 @@ export default function Story() {
                 Design should hold you, not overwhelm you.
               </p>
               <p className='text-[#d5d5c8] font-[300] text-[16px] leading-[1.5] text-left mb-3'>
-                My approach to design isn't rooted in trends.
+                My approach to design isn&apos;t rooted in trends.
               </p>
               <p className='text-[#d5d5c8] font-[300] text-[16px] leading-[1.5] text-left mb-3'>
-                It's rooted in experience, intuition, and an ongoing
+                It&apos;s rooted in experience, intuition, and an ongoing
               </p>
               <p className='text-[#d5d5c8] font-[300] text-[16px] leading-[1.5] text-left mb-6'>
                 relationship with stillness, light, and nature.
@@ -89,7 +89,7 @@ export default function Story() {
             <div className='mt-8 space-y-6'>
               <div className='bg-[#d5d5c8]/10 p-6 rounded-lg border border-[#d5d5c8]/20'>
                 <p className='text-[#d5d5c8] font-[300] text-[16px] leading-relaxed'>
-                  "Design should hold you, not overwhelm you."
+                  &ldquo;Design should hold you, not overwhelm you.&rdquo;
                 </p>
               </div>
               
@@ -98,7 +98,7 @@ export default function Story() {
               </p>
               
               <p className='text-[#d5d5c8] font-[300] text-[16px] leading-relaxed'>
-                I believe that the best designs are those that feel inevitable—as if they've always been there, waiting to be discovered.
+                I believe that the best designs are those that feel inevitable—as if they&apos;ve always been there, waiting to be discovered.
               </p>
             </div>
           </div>
@@ -120,7 +120,7 @@ export default function Story() {
               </p>
               
               <p className='text-[#d5d5c8] font-[300] text-[16px] leading-[1.5] text-left'>
-                I've learned that the most beautiful spaces are those that honor these natural rhythms and create harmony between the built environment and the world around us.
+                I&apos;ve learned that the most beautiful spaces are those that honor these natural rhythms and create harmony between the built environment and the world around us.
               </p>
             </div>
           </div>
@@ -137,7 +137,7 @@ export default function Story() {
             <div className='mt-8 space-y-6'>
               <div className='bg-[#d5d5c8]/10 p-6 rounded-lg border border-[#d5d5c8]/20'>
                 <p className='text-[#d5d5c8] font-[300] text-[16px] leading-relaxed'>
-                  "How should this space make you feel?"
+                  &ldquo;How should this space make you feel?&rdquo;
                 </p>
               </div>
               
@@ -146,7 +146,7 @@ export default function Story() {
               </p>
               
               <p className='text-[#d5d5c8] font-[300] text-[16px] leading-relaxed'>
-                Whether it's a sense of calm, inspiration, connection, or joy—every design decision serves that feeling. The result is spaces that don't just look beautiful, but feel right.
+                Whether it&apos;s a sense of calm, inspiration, connection, or joy—every design decision serves that feeling. The result is spaces that don&apos;t just look beautiful, but feel right.
               </p>
             </div>
           </div>
@@ -167,7 +167,7 @@ export default function Story() {
               
               <div className='bg-[#d5d5c8]/10 p-6 rounded-lg border border-[#d5d5c8]/20'>
                 <p className='text-[#d5d5c8] font-[300] text-[16px] leading-relaxed'>
-                  "That feeling guides every decision."
+                  &ldquo;That feeling guides every decision.&rdquo;
                 </p>
               </div>
               
