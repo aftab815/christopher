@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
-      <body className={`${josefinSans.variable} ${cormorant.variable} font-sans bg-off-white text-dark min-h-screen`}>
+      <body className={`${josefinSans.variable} ${cormorant.variable} font-sans bg-off-white text-dark min-h-screen cursor-auto`}>
         <Preloader />
         <CustomCursor />
         <SmoothScroll>{children}</SmoothScroll>

@@ -42,14 +42,24 @@ export default function Story() {
           alt='Background image of story'
           className='hidden md:block w-full h-full object-cover min-w-full min-h-full'
         />
-        <Image
-          src='/media/story mobile bg.png'
-          alt='Mobile background image of story'
-          className='md:hidden w-full h-full object-cover min-w-full min-h-full'
-          width={800}
-          height={1600}
-          priority
-        />
+        <div className='md:hidden w-full h-full'>
+          <Image
+            src='/media/story mobile bg.png'
+            alt='Mobile background image of story'
+            className='w-full h-full object-cover'
+            width={1080}
+            height={1920}
+            quality={100}
+            priority
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+            }}
+          />
+        </div>
       </div>
 
       {/* Header with Logo and Menu */}
