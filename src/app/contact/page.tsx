@@ -57,119 +57,109 @@ export default function Contact() {
       <Header logo={Logo} />
 
       {/* Main Content */}
-      <main className='relative z-10 container py-16 pt-16 sm:pt-20 md:pt-24 lg:pt-28 xl:pt-32'>
-        <div className='mx-auto max-w-6xl px-4 sm:px-6 md:px-8'>
-          <div className='grid grid-cols-1 gap-12 items-start lg:grid-cols-2'>
-            {/* Left Side - Contact Info */}
-            <div className='mt-12 sm:mt-16 space-y-8 text-center md:text-left'>
+      <main className='relative z-10 container mx-auto px-4 py-16 pt-16 sm:pt-20 md:pt-24 lg:pt-28 xl:pt-32'>
+        <div className='max-w-6xl mx-auto'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-start lg:pt-20'>
+            {/* Left Side - Contact Info - Moved down with padding */}
+            <div className='space-y-8 mt-16 lg:mt-0'>
               <div className='font-sans font-light text-2xl text-[#574f4d] leading-relaxed'>
                 <p>Please get in touch by completing the</p>
                 <p>form or emailing:</p>
                 <p className='mt-4'>
-                  <a 
-                    href='mailto:christopher@christopherpoole.design' 
-                    className='hover:opacity-80 transition-opacity inline-block'
-                  >
+                  <a href='mailto:christopher@christopherpoole.design' className='hover:opacity-80 transition-opacity'>
                     christopher@christopherpoole.design
                   </a>
                 </p>
               </div>
 
               {/* Social Icons */}
-              <div className='mt-12'>
-                <p className='text-[#574f4d] font-light mb-4'>Connect with us:</p>
-                <div className='flex justify-center md:justify-start space-x-6'>
-                  {/* Instagram Icon */}
-                  <a
-                    href='https://www.instagram.com/yourusername'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='w-10 h-10 hover:opacity-75 transition-opacity'
-                    aria-label='Instagram'
-                  >
-                    <Image 
-                      src={InstaIcon} 
-                      alt='Instagram' 
-                      className='w-full h-full object-contain'
-                      width={40}
-                      height={40}
-                    />
-                  </a>
+              <div className='flex space-x-6 mt-24'>
+                {/* Instagram Icon */}
+                <a
+                  href='#'
+                  className='w-8 h-8 text-[#574f4d] hover:opacity-80 transition-opacity rounded-full overflow-clip'
+                  aria-label='Instagram'
+                >
+                  <ImageZoom src={InstaIcon} alt='Instagram' className='w-full h-full' />
+                </a>
 
-                  {/* Pinterest Icon */}
-                  <a
-                    href='https://www.pinterest.com/yourusername'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='w-10 h-10 hover:opacity-75 transition-opacity'
-                    aria-label='Pinterest'
-                  >
-                    <Image 
-                      src={PinterestIcon} 
-                      alt='Pinterest' 
-                      className='w-full h-full object-contain'
-                      width={40}
-                      height={40}
-                    />
-                  </a>
-                </div>
+                {/* Pinterest Icon */}
+                <a
+                  href='#'
+                  className='w-8 h-8 text-[#574f4d] hover:opacity-80 transition-opacity rounded-full overflow-clip'
+                  aria-label='Pinterest'
+                >
+                  <ImageZoom src={PinterestIcon} alt='Pinterest' className='w-full h-full' />
+                </a>
               </div>
             </div>
 
             {/* Right Side - Contact Form */}
-            <div className='bg-white bg-opacity-90 p-6 sm:p-8 rounded-lg shadow-lg'>
-              <h2 className='text-2xl sm:text-3xl font-light text-[#574f4d] mb-6 sm:mb-8 text-center md:text-left'>Send us a message</h2>
+            <div className='bg-white/10 backdrop-blur-sm p-8 -mt-8'>
               <form action={formAction} className='space-y-6'>
-                <div className='mb-6'>
-                  <label htmlFor='name' className='block text-sm font-medium text-[#574f4d] mb-2 text-left'>
-                    Name *
+                <div className='relative'>
+                  <label htmlFor='name' className='block text-[#574f4d] text-sm font-medium mb-2 font-sans uppercase'>
+                    Name
                   </label>
-                  <input
-                    type='text'
-                    id='name'
-                    name='name'
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className='w-full px-4 py-2 border border-[#d1d1d1] rounded-md focus:ring-1 focus:ring-[#574f4d] focus:border-[#574f4d] outline-none transition-all text-[#574f4d]'
-                    required
-                  />
+                  <div className='relative'>
+                    <div className='absolute left-0 top-0 bottom-0 w-px bg-[#574f4d]'></div>
+                    <input
+                      type='text'
+                      id='name'
+                      name='name'
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
+                      className='w-full pl-6 pr-4 ml-3 py-1 bg-white/20 backdrop-blur-sm border border-white/30 text-[#574f4d] focus:outline-none focus:ring-2 focus:ring-[#574f4d]/50 focus:border-transparent'
+                    />
+                  </div>
                 </div>
 
-                <div className='mb-6'>
-                  <label htmlFor='email' className='block text-sm font-medium text-[#574f4d] mb-2 text-left'>
-                    Email *
+                <div className='relative'>
+                  <label htmlFor='email' className='block text-[#574f4d] text-sm font-medium mb-2 font-sans uppercase'>
+                    Email
                   </label>
-                  <input
-                    type='email'
-                    id='email'
-                    name='email'
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className='w-full px-4 py-2 border border-[#d1d1d1] rounded-md focus:ring-1 focus:ring-[#574f4d] focus:border-[#574f4d] outline-none transition-all text-[#574f4d]'
-                    required
-                  />
+                  <div className='relative'>
+                    <div className='absolute left-0 top-0 bottom-0 w-px bg-[#574f4d]'></div>
+                    <input
+                      type='email'
+                      id='email'
+                      name='email'
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                      className='w-full pl-6 pr-4 ml-3 py-1 bg-white/20 backdrop-blur-sm border border-white/30 text-[#574f4d] focus:outline-none focus:ring-2 focus:ring-[#574f4d]/50 focus:border-transparent'
+                    />
+                  </div>
                 </div>
 
-                <div className='mb-6'>
+                <div className='relative'>
                   <label
                     htmlFor='message'
-                    className='block text-sm font-medium text-[#574f4d] mb-2 text-left'
+                    className='block text-[#574f4d] text-sm font-medium mb-2 font-sans uppercase'
                   >
-                    Message *
+                    Message
                   </label>
-                  <textarea
-                    id='message'
-                    name='message'
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    rows={6}
-                    className='w-full px-4 py-2 border border-[#d1d1d1] rounded-md focus:ring-1 focus:ring-[#574f4d] focus:border-[#574f4d] outline-none transition-all text-[#574f4d]'
-                    required
-                  />
+                  <div className='relative'>
+                    <div className='absolute left-0 top-0 bottom-0 w-px bg-[#574f4d]'></div>
+                    <textarea
+                      id='message'
+                      name='message'
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      required
+                      rows={6}
+                      className='w-full pl-6 pr-4 ml-3 py-3 bg-white/20 backdrop-blur-sm border border-white/30 text-[#574f4d] focus:outline-none focus:ring-2 focus:ring-[#574f4d]/50 focus:border-transparent resize-none'
+                    />
+                  </div>
                 </div>
 
                 {state.message && (
-                  <p className={`mt-4 text-sm text-center md:text-left ${state.ok ? 'text-green-600' : 'text-red-600'}`}>
+                  <p
+                    className={`${state.ok ? "text-green-600" : "text-red-600"} text-sm`}
+                    role='status'
+                    aria-live='polite'
+                  >
                     {state.message}
                   </p>
                 )}
@@ -179,29 +169,21 @@ export default function Contact() {
                   <button
                     type='submit'
                     disabled={isPending}
-                    className='w-full bg-[#574f4d] text-white py-3 px-6 rounded-md hover:bg-opacity-90 transition-all duration-300 font-medium text-sm uppercase tracking-wider flex items-center justify-center space-x-2 disabled:opacity-70 disabled:cursor-not-allowed max-w-xs mx-auto md:mx-0'
+                    aria-busy={isPending}
+                    className='flex items-center justify-center w-12 h-12 bg-[#574f4d] text-white rounded-full hover:bg-[#574f4d]/80 transition-colors focus:outline-none focus:ring-2 focus:ring-[#574f4d]/50 disabled:opacity-50 disabled:cursor-not-allowed'
                     aria-label='Submit form'
                   >
-                    {isPending ? (
-                      <>
-                        <svg
-                          className='animate-spin -ml-1 mr-2 h-4 w-4 text-white'
-                          xmlns='http://www.w3.org/2000/svg'
-                          fill='none'
-                          viewBox='0 0 24 24'
-                        >
-                          <circle className='opacity-25' cx='12' cy='12' r='10' stroke='currentColor' strokeWidth='4'></circle>
-                          <path
-                            className='opacity-75'
-                            fill='currentColor'
-                            d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'
-                          ></path>
-                        </svg>
-                        Sending...
-                      </>
-                    ) : (
-                      'Send Message'
-                    )}
+                    <svg
+                      viewBox='0 0 24 24'
+                      fill='none'
+                      stroke='currentColor'
+                      strokeWidth='2'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      className='w-6 h-6'
+                    >
+                      <polyline points='9,18 15,12 9,6'></polyline>
+                    </svg>
                   </button>
                 </div>
               </form>

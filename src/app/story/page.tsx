@@ -48,26 +48,26 @@ export default function Story() {
       <Header logo={Logo} buttonClassName='text-[#d6d5c9] font-[300] text-[13px] uppercase tracking-wider' />
 
       {/* Main Content */}
-      <main className='relative z-10 container pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-40'>
+      <main className='relative z-10 container pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-40 pl-0'>
         <HorizontalScrollContainer ref={scrollContainerRef} onScrollChange={handleScrollChange}>
           {/* text content */}
-          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full max-w-[900px] px-4 sm:px-6 md:pl-6 lg:pl-8 text-center md:text-left space-y-6'>
+          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full max-w-[900px] px-4 sm:px-6 md:pl-0 lg:pl-0 text-center md:text-left space-y-4'>
             <h1 className='text-[#d5d5c8] font-serif text-[24px] uppercase tracking-wider leading-tight'>OUR STORY</h1>
             
-            <div className='space-y-4'>
+            <div className='space-y-2 mx-auto md:mx-0 max-w-[90%] md:max-w-full'>
               <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
                 Design should hold you, not overwhelm you.
               </p>
               <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
-                My approach to design isn&apos;t rooted in trends.
+                My approach to design isn't rooted in trends.
               </p>
               <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
-                It&apos;s rooted in experience, intuition, and an ongoing
+                It's rooted in experience, intuition, and an ongoing
               </p>
               <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
                 relationship with stillness, light, and nature.
               </p>
-              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed pt-4'>
+              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed pt-2'>
                 Everything I create begins with one question:
               </p>
               <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed italic'>
@@ -78,7 +78,7 @@ export default function Story() {
               </p>
             </div>
             
-            <div className='pt-4 flex flex-col items-center md:items-start'>
+            <div className='pt-2 flex flex-col items-center md:items-start'>
               <h3 
                 onClick={navigateToProjects}
                 className='text-[#d5d5c8] font-[300] text-base uppercase tracking-wider hover:underline cursor-pointer transition-all duration-300 hover:opacity-80 active:opacity-60'

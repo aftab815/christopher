@@ -42,42 +42,45 @@ export default function Home() {
       <Header logo={Logo} buttonClassName='text-[#d6d5c9] font-[300] text-[13px] uppercase tracking-wider' />
 
       {/* Main Content */}
-      <main className='relative z-10 container pt-24 sm:pt-20 md:pt-24 lg:pt-28 xl:pt-32'>
+      <main className='relative z-10 container pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-40 pl-0'>
         <HorizontalScrollContainer ref={scrollContainerRef} onScrollChange={handleScrollChange}>
           {/* text content */}
-          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full max-w-[900px] px-4 sm:px-6 md:pl-6 lg:pl-8 text-center md:text-left space-y-6'>
-            <div className='space-y-6'>
-              <h1 className='text-[#d5d5c8] font-serif text-2xl sm:text-3xl font-semibold uppercase tracking-wider'>THE ETHOS</h1>
-              <h2 className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>Our work is guided by feeling.</h2>
+          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full max-w-[900px] px-4 sm:px-6 md:pl-0 lg:pl-0 text-center md:text-left space-y-2'>
+            <h1 className='text-[#d5d5c8] font-serif text-[24px] uppercase tracking-wider leading-tight'>THE ETHOS</h1>
+            <div className='space-y-1'>
+              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
+                Our work is guided by feeling.
+              </p>
 
-              <div className='space-y-4'>
-                <div>
-                  <h3 className='text-[#d5d5c8] font-[300] text-base font-medium'>Peace</h3>
-                  <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
-                    The design should ground you. Light, air, and materials that calm the nervous system.
-                  </p>
-                </div>
-
-                {/* vertical bar */}
-                <div className='w-8 h-px bg-[#d5d5c8]/40 mx-auto md:mx-0'></div>
-
-                <div>
-                  <h3 className='text-[#d5d5c8] font-[300] text-base font-medium'>Simplicity</h3>
-                  <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
-                    Nothing extra. Everything necessary. Beauty found in restraint.
-                  </p>
-                </div>
-
-                {/* vertical bar */}
-                <div className='w-8 h-px bg-[#d5d5c8]/40 mx-auto md:mx-0'></div>
-
-                <div>
-                  <h3 className='text-[#d5d5c8] font-[300] text-base font-medium'>Flow</h3>
-                  <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
-                    From one room to the next, one breath to the next—our work moves like water.
-                  </p>
-                </div>
+              <div className='pt-1'>
+                <h2 className='text-[#d5d5c8] font-[300] text-lg uppercase tracking-wider'>PEACE</h2>
+                <div className='w-8 h-px bg-[#d5d5c8]/50 mt-2 mx-auto md:mx-0'></div>
               </div>
+              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
+                The design should ground you. Light, air, and materials that calm the nervous system.
+              </p>
+
+                {/* vertical bar */}
+                <div className='w-8 h-px bg-[#d5d5c8]/40 mx-auto md:mx-0'></div>
+
+              <div className='pt-1'>
+                <h2 className='text-[#d5d5c8] font-[300] text-lg uppercase tracking-wider'>SIMPLICITY</h2>
+                <div className='w-8 h-px bg-[#d5d5c8]/50 mt-2 mx-auto md:mx-0'></div>
+              </div>
+              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
+                Nothing extra. Everything necessary. Beauty found in restraint.
+              </p>
+
+                {/* vertical bar */}
+                <div className='w-8 h-px bg-[#d5d5c8]/40 mx-auto md:mx-0'></div>
+
+              <div className='pt-1'>
+                <h2 className='text-[#d5d5c8] font-[300] text-lg uppercase tracking-wider'>FLOW</h2>
+                <div className='w-8 h-px bg-[#d5d5c8]/50 mt-2 mx-auto md:mx-0'></div>
+              </div>
+              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
+                From one room to the next, one breath to the next—our work moves like water.
+              </p>
             </div>
           </div>
 
