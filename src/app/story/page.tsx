@@ -19,14 +19,15 @@ import Image from "next/image";
 export default function Story() {
   const scrollContainerRef = useRef<HorizontalScrollContainerRef>(null);
 
-  const handleScrollChange = () => {
-    // Scroll change handler for future use
-  };
-
   const router = useRouter();
 
   const scrollToStart = () => {
     scrollContainerRef.current?.resetScroll();
+  };
+  
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const handleScrollChange = () => {
+    // Scroll change handler for future use
   };
 
   const navigateToProjects = () => {
@@ -59,10 +60,10 @@ export default function Story() {
                 Design should hold you, not overwhelm you.
               </p>
               <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
-                My approach to design isn't rooted in trends.
+                My approach to design isn&apos;t rooted in trends.
               </p>
               <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
-                It's rooted in experience, intuition, and an ongoing
+                It&apos;s rooted in experience, intuition, and an ongoing
               </p>
               <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
                 relationship with stillness, light, and nature.

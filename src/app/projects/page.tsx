@@ -18,19 +18,12 @@ import Image5 from "@/assets/projects/image5.jpeg";
 import Image6 from "@/assets/projects/image6.jpeg";
 import BGImage from "@/assets/projects/background.jpg";
 
-// types
-interface ScrollInfo {
-  scrollPosition: number;
-  maxScroll: number;
-  scrollPercentage: number;
-  direction: "left" | "right";
-}
-
 export default function Projects() {
   const scrollContainerRef = useRef<HorizontalScrollContainerRef>(null);
 
   const handleScrollChange = () => {
     // Scroll change handler for future use
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
   };
 
   const scrollToStart = () => {
@@ -109,7 +102,7 @@ export default function Projects() {
 
               <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
                 Designed for connection—to nature, to art, and to each other—this home features open, flowing spaces that
-                encourage gathering and contemplation in equal measure. It's a place where every detail tells a story of
+                encourage gathering and contemplation in equal measure. It&apos;s a place where every detail tells a story of
                 craftsmanship and intention.
               </p>
 
@@ -132,13 +125,13 @@ export default function Projects() {
               </div>
             </div>
             <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
-              Rooted in Christopher's aesthetic and philosophical influences — from Wabi-Sabi to biophilia — the design
+              Rooted in Christopher&apos;s aesthetic and philosophical influences — from Wabi-Sabi to biophilia — the design
               brings nature inward and emotion to the forefront. Light, material, and movement are all treated as
               collaborators, not afterthoughts.
             </p>
             <p className='text-[#d6d5c9] font-[300] text-base leading-relaxed text-center md:text-left'>
               Every line is drawn with intention. Local stone, minimal interventions, and breathable textures make the
-              home feel like it's always belonged.
+              home feel like it&apos;s always belonged.
             </p>
           </div>
 
@@ -183,7 +176,7 @@ export default function Projects() {
           <div className='lg:max-w-[900px] lg:min-w-[900px] w-full max-w-[900px] px-4 md:pl-6 lg:pl-8 mx-auto md:mx-0 max-w-[90%] md:max-w-full'>
             <p className='text-[#d6d5c9] font-[300] text-base leading-relaxed text-center md:text-left'>
               As an investment, The Quarry offers a fixed return of 14–20% annually, with capital protected via a
-              ring-fenced SPV and detailed development guarantees. Investors are not just backing a build — they're
+              ring-fenced SPV and detailed development guarantees. Investors are not just backing a build — they&#39;re
               aligning with a new, grounded vision of sustainable living.
             </p>
             <br />
