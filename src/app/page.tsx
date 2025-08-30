@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Logo from "@/assets/home/logo.png";
 
@@ -46,14 +47,44 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [quotes.length]);
 
+  const [showVideo, setShowVideo] = useState(false);
+
+  useEffect(() => {
+    // Show video after a short delay
+    const timer = setTimeout(() => {
+      setShowVideo(true);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className='relative min-h-screen overflow-hidden'>
-      {/* Background Video */}
-      <div className='absolute inset-0 z-0'>
-        <video autoPlay loop muted playsInline className='w-full h-full object-cover min-w-full min-h-full'>
-          <source src='./media/home-background.mp4' type='video/mp4' />
-        </video>
+      {/* Background Image - Shows first */}
+      <div className={`absolute inset-0 z-0 transition-opacity duration-1000 ${showVideo ? 'opacity-0' : 'opacity-100'}`}>
+        <Image
+          src='/media/ethos mobile bg.png'
+          alt='Background'
+          fill
+          className='object-cover w-full h-full'
+          priority
+        />
       </div>
+
+      {/* Background Video - Fades in after delay */}
+      {showVideo && (
+        <div className='absolute inset-0 z-0'>
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className='w-full h-full object-cover min-w-full min-h-full'
+            onLoadedData={() => setShowVideo(true)}
+          >
+            <source src='./media/home-background.mp4' type='video/mp4' />
+          </video>
+        </div>
+      )}
 
       {/* Header with Logo and Menu */}
       <Header logo={Logo} />

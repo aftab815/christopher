@@ -38,13 +38,22 @@ export default function Contact() {
     <div className='relative min-h-screen'>
       {/* Background: static image base, video overlay only on md+ to save bandwidth */}
       <div className='fixed inset-0 z-0'>
-        <Image src={BGImage} alt='Background' fill className='object-cover' priority />
+        <Image 
+          src={BGImage} 
+          alt='Background' 
+          fill 
+          className='object-cover' 
+          priority
+          quality={85}
+          placeholder='blur'
+          sizes="(max-width: 768px) 100vw, 100vw"
+        />
         <video
           autoPlay
           loop
           muted
           playsInline
-          preload='none'
+          preload='metadata'
           poster='./media/video-poster.png'
           aria-hidden='true'
           className='hidden md:block w-full h-full object-cover min-w-full min-h-full'
@@ -100,8 +109,10 @@ export default function Contact() {
                       <Image 
                         src={PinterestIcon} 
                         alt='Pinterest' 
-                        fill
-                        className='object-contain'
+                        fill 
+                        className='object-contain' 
+                        loading='lazy'
+                        sizes='32px'
                       />
                     </div>
                   </a>

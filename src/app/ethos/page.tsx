@@ -35,23 +35,20 @@ export default function Home() {
           src={BGImage}
           alt='Background image of ethos'
           className='hidden md:block w-full h-full object-cover min-w-full min-h-full'
+          priority
+          quality={85}
+          placeholder='blur'
+          sizes="100vw"
         />
-        <div className='md:hidden w-full h-full'>
+        <div className='md:hidden w-full h-full relative'>
           <Image
             src='/media/ethos mobile bg.png'
             alt='Mobile background image of ethos'
-            className='w-full h-full object-cover'
-            width={1080}
-            height={1920}
-            quality={100}
+            className='object-cover'
+            fill
             priority
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-            }}
+            quality={85}
+            sizes="100vw"
           />
         </div>
       </div>

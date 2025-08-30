@@ -41,6 +41,10 @@ export default function Story() {
           src={BGImage}
           alt='Background image of story'
           className='hidden md:block w-full h-full object-cover min-w-full min-h-full'
+          priority
+          quality={85}
+          placeholder='blur'
+          sizes="100vw"
         />
         <div className='md:hidden w-full h-full'>
           <Image
@@ -49,8 +53,8 @@ export default function Story() {
             className='w-full h-full object-cover'
             width={1080}
             height={1920}
-            quality={100}
             priority
+            quality={85}
             style={{
               position: 'absolute',
               top: 0,

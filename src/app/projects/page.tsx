@@ -35,23 +35,20 @@ export default function Projects() {
           src={BGImage}
           alt='Background image of projects'
           className='hidden md:block w-full h-full object-cover min-w-full min-h-full'
+          priority
+          quality={85}
+          placeholder='blur'
+          sizes="100vw"
         />
-        <div className='md:hidden w-full h-full'>
+        <div className='md:hidden w-full h-full relative'>
           <Image
             src='/media/mobile projects bg.png'
             alt='Mobile background image of projects'
-            className='w-full h-full object-cover'
-            width={1080}
-            height={1920}
-            quality={100}
+            className='object-cover'
+            fill
             priority
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-            }}
+            quality={85}
+            sizes="100vw"
           />
         </div>
       </div>
@@ -93,15 +90,19 @@ export default function Projects() {
           <div className='flex flex-col gap-4 lg:ml-[1vw] w-full px-4 sm:px-6 md:pl-0 lg:pl-0 my-6 lg:my-0 items-center md:items-start'>
             <ImageZoom
               src={Image1}
-              alt=''
+              alt='Interior design project showing a modern living space'
               className='w-full lg:h-full h-auto object-cover'
               containerClassName='relative lg:max-w-[50vw] lg:min-w-[350px] lg:h-[29vh] w-full h-auto'
+              loading='lazy'
+              quality={85}
             />
             <ImageZoom
               src={Image2}
-              alt=''
+              alt='Interior design project showing a contemporary kitchen area'
               className='w-full lg:h-full h-auto object-cover'
               containerClassName='relative lg:max-w-[50vw] lg:min-w-[350px] lg:h-[29vh] w-full h-auto'
+              loading='lazy'
+              quality={85}
             />
           </div>
 
@@ -154,15 +155,19 @@ export default function Projects() {
           <div className='flex flex-col gap-4 lg:ml-[1vw] w-full px-4 sm:px-6 md:pl-0 lg:pl-0 my-6 lg:my-0 items-center md:items-start'>
             <ImageZoom
               src={Image3}
-              alt=''
+              alt='Interior design project showing a modern bedroom with natural light'
               className='w-full lg:h-full h-auto object-cover'
               containerClassName='relative lg:max-w-[50vw] lg:min-w-[350px] lg:h-[29vh] w-full h-auto'
+              loading='lazy'
+              quality={85}
             />
             <ImageZoom
               src={Image4}
-              alt=''
+              alt='Interior design project featuring a luxurious bathroom design'
               className='w-full lg:h-full h-auto object-cover'
               containerClassName='relative lg:max-w-[50vw] lg:min-w-[350px] lg:h-[29vh] w-full h-auto'
+              loading='lazy'
+              quality={85}
             />
           </div>
 
@@ -210,15 +215,19 @@ export default function Projects() {
           <div className='flex flex-col gap-6 lg:ml-[2vw] w-full px-6 lg:px-0 my-10 lg:my-0'>
             <ImageZoom
               src={Image5}
-              alt=''
+              alt='Investment property showcasing architectural details and design'
               className='w-full lg:h-full h-auto object-cover'
               containerClassName='relative lg:max-w-[50vw] lg:min-w-[350px] lg:h-[29vh] w-full h-auto'
+              loading='lazy'
+              quality={85}
             />
             <ImageZoom
               src={Image6}
-              alt=''
+              alt='Investment property exterior with landscape design'
               className='w-full lg:h-full h-auto object-cover'
               containerClassName='relative lg:max-w-[50vw] lg:min-w-[350px] lg:h-[29vh] w-full h-auto'
+              loading='lazy'
+              quality={85}
             />
           </div>
           <div className='hidden lg:block lg:min-w-[2vw]'></div>
