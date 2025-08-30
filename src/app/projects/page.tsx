@@ -52,32 +52,32 @@ export default function Projects() {
       <Header logo={Logo} buttonClassName='text-[#D6D5C9]' />
 
       {/* Main Content */}
-      <main className='relative z-10 container pt-32 sm:pt-20 md:pt-24 lg:pt-28 xl:pt-32'>
+      <main className='relative z-10 container pt-24 sm:pt-20 md:pt-24 lg:pt-28 xl:pt-32'>
         <HorizontalScrollContainer ref={scrollContainerRef} onScrollChange={handleScrollChange}>
           {/* Section 1: Our Projects */}
-          <div className='lg:max-w-[900px] lg:min-w-[900px] lg:pl-30 w-full max-w-[900px] px-6'>
-            <h1 className='text-[#e7e7dc] text-[24px]'>Our Projects</h1>
-            <h2 className='text-[#e7e7dc] font-[300] text-[16px]'>
-              Introducing a New Model for Living
-            </h2>
-            <br />
+          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full max-w-[900px] px-4 sm:px-6 md:pl-6 lg:pl-8 text-center md:text-left space-y-6'>
+            <div className='space-y-4'>
+              <h1 className='text-[#e7e7dc] font-serif text-2xl sm:text-3xl font-semibold'>Our Projects</h1>
+              <h2 className='text-[#e7e7dc] font-[300] text-base leading-relaxed'>
+                Introducing a New Model for Living
+              </h2>
 
-            <p className='text-[#e7e7dc] font-[300] text-[16px]'>
-              Our work goes beyond design — it&apos;s about reimagining what a home can feel like. Each project is
-              shaped by a philosophy rooted in simplicity, natural flow, and emotional connection. We build spaces that
-              restore, calm, and support the real lives of the people inside them.
-            </p>
-            <br />
+              <p className='text-[#e7e7dc] font-[300] text-base leading-relaxed'>
+                Our work goes beyond design — it&apos;s about reimagining what a home can feel like. Each project is
+                shaped by a philosophy rooted in simplicity, natural flow, and emotional connection. We build spaces that
+                restore, calm, and support the real lives of the people inside them.
+              </p>
 
-            <p className='text-[#e7e7dc] font-[300] text-[16px]'>
-              But more than that, our goal is to expand a model of living that&apos;s regenerative, timeless, and deeply
-              human. This is slow architecture — built with care, not convention.
-            </p>
-            <br />
-            <br />
+              <p className='text-[#e7e7dc] font-[300] text-base leading-relaxed'>
+                But more than that, our goal is to expand a model of living that&apos;s regenerative, timeless, and deeply
+                human. This is slow architecture — built with care, not convention.
+              </p>
 
-            <h2 className='text-[#e7e7dc] font-[300] text-lg md:text-lg sm:text-lg uppercase'>THE QUARRY</h2>
-            <div className='-mt-2 w-8 h-px bg-white/50'></div>
+              <div className='pt-4'>
+                <h2 className='text-[#e7e7dc] font-[300] text-lg uppercase'>THE QUARRY</h2>
+                <div className='w-8 h-px bg-white/50 mt-2 mx-auto md:mx-0'></div>
+              </div>
+            </div>
           </div>
 
           {/* Images 1 & 2 for Our Projects section */}
@@ -97,31 +97,47 @@ export default function Projects() {
           </div>
 
           {/* Section 2: The Quarry Details */}
-          <div className='lg:max-w-[900px] lg:min-w-[900px] lg:pl-30 w-full max-w-[900px] px-6'>
-            <h1 className='text-[#e7e7dc] text-[24px]'>The Quarry</h1>
-            <h2 className='text-[#e7e7dc] font-[300] text-[16px]'>
-              The Quarry – Where Architecture Meets Regeneration
-            </h2>
-            <br />
-            <p className='text-[#e7e7dc] font-[300] text-[16px]'>
-              14–20% Fixed Return | Passivhaus-Standard | Designed to Endure
-            </p>
-            <br />
-            <p className='text-[#e7e7dc] font-[300] text-[16px]'>
-              Set in the Lancashire hills, The Quarry transforms a disused industrial site into a 3,300 sq ft home that
-              marries quiet luxury with environmental leadership. Built to Passivhaus standards, it offers peak energy
-              efficiency, beauty, and long-term performance.
-            </p>
-            <br />
-            <p className='text-[#e7e7dc] font-[300] text-[16px]'>
-              Rooted in Christopher&apos;s aesthetic and philosophical influences — from Wabi-Sabi to biophilia — the
-              design brings nature inward and emotion to the forefront. Light, material, and movement are all treated as
+          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full max-w-[900px] px-4 sm:px-6 md:pl-6 lg:pl-8 text-center md:text-left space-y-6'>
+            <h1 className='text-[#e7e7dc] text-[24px] text-center md:text-left'>The Quarry</h1>
+            <div className='space-y-4'>
+              <p className='text-[#e7e7dc] font-[300] text-base leading-relaxed text-center md:text-left'>
+                Nestled in a field of wildflowers, The Meadow is a celebration of organic forms and natural light. The
+                structure's gentle curves and warm wood tones create a sense of movement that mirrors the surrounding
+                landscape.
+              </p>
+
+              <p className='text-[#e7e7dc] font-[300] text-base leading-relaxed text-center md:text-left'>
+                Designed for connection—to nature, to art, and to each other—this home features open, flowing spaces that
+                encourage gathering and contemplation in equal measure. It's a place where every detail tells a story of
+                craftsmanship and intention.
+              </p>
+
+              <div className='pt-4 space-y-6'>
+                <div>
+                  <h2 className='text-[#e7e7dc] font-[300] text-lg uppercase text-center md:text-left'>Get in Touch</h2>
+                  <div className='w-8 h-px bg-white/50 mt-2 mx-auto md:mx-0'></div>
+                </div>
+
+                <p className='text-[#e7e7dc] font-[300] text-base leading-relaxed text-center md:text-left'>
+                  Interested in working together? We'd love to hear about your project.
+                </p>
+
+                <Link
+                  href='/contact'
+                  className='text-[#e7e7dc] font-[300] text-base hover:underline transition-all duration-300 inline-block text-center md:text-left'
+                >
+                  Start Your Journey →
+                </Link>
+              </div>
+            </div>
+            <p className='text-[#e7e7dc] font-[300] text-base leading-relaxed text-center md:text-left'>
+              Rooted in Christopher's aesthetic and philosophical influences — from Wabi-Sabi to biophilia — the design
+              brings nature inward and emotion to the forefront. Light, material, and movement are all treated as
               collaborators, not afterthoughts.
             </p>
-            <br />
-            <p className='text-[#e7e7dc] font-[300] text-[16px]'>
+            <p className='text-[#e7e7dc] font-[300] text-base leading-relaxed text-center md:text-left'>
               Every line is drawn with intention. Local stone, minimal interventions, and breathable textures make the
-              home feel like it&apos;s always belonged.
+              home feel like it's always belonged.
             </p>
           </div>
 
@@ -141,21 +157,42 @@ export default function Projects() {
             />
           </div>
 
+          {/* Section 3: The Cliffs Details */}
+          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full max-w-[900px] px-4 sm:px-6 md:pl-6 lg:pl-8 text-center md:text-left space-y-6'>
+            <div className='space-y-4'>
+              <p className='text-[#e7e7dc] font-[300] text-base leading-relaxed text-center md:text-left'>
+                The Quarry redefines modern living with its seamless integration of natural materials and clean lines. Each
+                space is designed to enhance the connection between indoor comfort and the surrounding landscape, creating
+                a sanctuary that feels both luxurious and organic.
+              </p>
+
+              <p className='text-[#e7e7dc] font-[300] text-base leading-relaxed text-center md:text-left'>
+                Every detail, from the hand-selected stone to the custom millwork, reflects a commitment to craftsmanship
+                and sustainability. The result is a home that stands as a testament to thoughtful, intentional design.
+              </p>
+
+              <div className='pt-4'>
+                <h2 className='text-[#e7e7dc] font-[300] text-lg uppercase text-center md:text-left'>THE CLIFFS</h2>
+                <div className='w-8 h-px bg-white/50 mt-2 mx-auto md:mx-0'></div>
+              </div>
+            </div>
+          </div>
+
           {/* section 3: Investment Details */}
-          <div className='lg:max-w-[900px] lg:min-w-[900px] lg:pl-30 w-full max-w-[900px] px-6'>
-            <p className='text-[#e7e7dc] font-[300] text-[16px]'>
+          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full max-w-[900px] pl-4 md:pl-6 lg:pl-8'>
+            <p className='text-[#e7e7dc] font-[300] text-base leading-relaxed text-center md:text-left'>
               As an investment, The Quarry offers a fixed return of 14–20% annually, with capital protected via a
-              ring-fenced SPV and detailed development guarantees. Investors are not just backing a build — they&apos;re
+              ring-fenced SPV and detailed development guarantees. Investors are not just backing a build — they're
               aligning with a new, grounded vision of sustainable living.
             </p>
             <br />
-            <p className='text-[#e7e7dc] font-[300] text-[16px]'>
+            <p className='text-[#e7e7dc] font-[300] text-base leading-relaxed text-center md:text-left'>
               This is a home that feels like a turning point — for design, for lifestyle, and for what comes next.
             </p>
 
             {/* get in touch */}
             <Link href={"/contact"}>
-              <h2 className='text-[#e7e7dc] font-[300] text-[16px] uppercase mt-48'>Get in Touch</h2>
+              <h2 className='text-[#e7e7dc] font-[300] text-lg uppercase mt-48 text-center md:text-left'>Get in Touch</h2>
               <div className='-mt-2 w-8 h-px bg-white/50'></div>
             </Link>
           </div>

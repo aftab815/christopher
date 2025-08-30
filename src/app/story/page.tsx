@@ -1,5 +1,6 @@
 "use client";
 import { useRef } from "react";
+import { useRouter } from "next/navigation";
 import Header from "@/components/Header";
 import ImageZoom from "@/components/shared/ImageZoom";
 
@@ -22,8 +23,14 @@ export default function Story() {
     // Scroll change handler for future use
   };
 
+  const router = useRouter();
+
   const scrollToStart = () => {
     scrollContainerRef.current?.resetScroll();
+  };
+
+  const navigateToProjects = () => {
+    router.push('/projects');
   };
 
   return (
@@ -41,66 +48,73 @@ export default function Story() {
       <Header logo={Logo} buttonClassName='text-[#d6d5c9] font-[300] text-[13px] uppercase tracking-wider' />
 
       {/* Main Content */}
-      <main className='relative z-10 container pt-32 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-40'>
+      <main className='relative z-10 container pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-40'>
         <HorizontalScrollContainer ref={scrollContainerRef} onScrollChange={handleScrollChange}>
           {/* text content */}
-          <div className='lg:max-w-[900px] lg:min-w-[900px] lg:pl-30 w-full max-w-[900px] px-4 sm:px-6'>
-            <h1 className='text-[#d5d5c8] font-serif text-[24px] uppercase tracking-wider leading-tight text-left'>OUR STORY</h1>
+          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full max-w-[900px] px-4 sm:px-6 md:pl-6 lg:pl-8 text-center md:text-left space-y-6'>
+            <h1 className='text-[#d5d5c8] font-serif text-[24px] uppercase tracking-wider leading-tight'>OUR STORY</h1>
             
-            <div className='mt-8'>
-              <p className='text-[#d5d5c8] font-[300] text-[16px] leading-[1.5] text-left mb-3'>
+            <div className='space-y-4'>
+              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
                 Design should hold you, not overwhelm you.
               </p>
-              <p className='text-[#d5d5c8] font-[300] text-[16px] leading-[1.5] text-left mb-3'>
+              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
                 My approach to design isn&apos;t rooted in trends.
               </p>
-              <p className='text-[#d5d5c8] font-[300] text-[16px] leading-[1.5] text-left mb-3'>
+              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
                 It&apos;s rooted in experience, intuition, and an ongoing
               </p>
-              <p className='text-[#d5d5c8] font-[300] text-[16px] leading-[1.5] text-left mb-6'>
+              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
                 relationship with stillness, light, and nature.
               </p>
-              <p className='text-[#d5d5c8] font-[300] text-[16px] leading-[1.5] text-left mb-3'>
+              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed pt-4'>
                 Everything I create begins with one question:
               </p>
-              <p className='text-[#d5d5c8] font-[300] text-[16px] leading-[1.5] text-left italic mb-3'>
+              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed italic'>
                 How should this space make you feel?
               </p>
-              <p className='text-[#d5d5c8] font-[300] text-[16px] leading-[1.5] text-left'>
+              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
                 That feeling guides every decision.
               </p>
             </div>
             
-            <div className='mt-8'>
-              <h3 className='text-[#d5d5c8] font-[300] text-[16px] uppercase tracking-wider text-left hover:underline cursor-pointer transition-all duration-300'>FUTURE PROJECTS</h3>
+            <div className='pt-4 flex flex-col items-center md:items-start'>
+              <h3 
+                onClick={navigateToProjects}
+                className='text-[#d5d5c8] font-[300] text-base uppercase tracking-wider hover:underline cursor-pointer transition-all duration-300 hover:opacity-80 active:opacity-60'
+              >
+                FUTURE PROJECTS
+              </h3>
               <div className='w-8 h-px bg-[#d5d5c8]/50 mt-2'></div>
             </div>
           </div>
 
           {/* image 1 */}
-          <div className='relative lg:max-w-[50vw] lg:min-w-[500px] lg:h-[60vh] lg:ml-[1vw] lg:mt-4 w-full h-auto px-0 my-6 sm:my-8 lg:my-0'>
-            <div className='relative overflow-hidden'>
-              <ImageZoom src={Image1} alt='Story Image 1' className='w-full lg:h-[60vh] h-[200px] sm:h-[250px] md:h-[300px] object-cover' />
+          <div className='relative lg:max-w-[50vw] lg:min-w-[500px] lg:h-[60vh] lg:ml-[1vw] lg:mt-4 w-full h-auto px-4 sm:px-6 md:px-0 my-8 sm:my-10 lg:my-0'>
+            <div className='relative overflow-hidden rounded-lg'>
+              <ImageZoom 
+                src={Image1} 
+                alt='Story Image 1' 
+                className='w-full lg:h-[60vh] h-[220px] sm:h-[280px] md:h-[300px] object-cover' 
+              />
             </div>
           </div>
 
           {/* text content 2 */}
-          <div className='lg:max-w-[900px] lg:min-w-[900px] lg:pl-30 w-full max-w-[900px] px-4 sm:px-6'>
-            <div className='mt-8 space-y-6'>
-              <div className='bg-[#d5d5c8]/10 p-6 rounded-lg border border-[#d5d5c8]/20'>
-                <p className='text-[#d5d5c8] font-[300] text-[16px] leading-relaxed'>
-                  &ldquo;Design should hold you, not overwhelm you.&rdquo;
-                </p>
-              </div>
-              
-              <p className='text-[#d5d5c8] font-[300] text-[16px] leading-relaxed'>
-                Every space I design is a reflection of this philosophy. It&apos;s about creating environments that support and nurture, rather than dominate and distract.
-              </p>
-              
-              <p className='text-[#d5d5c8] font-[300] text-[16px] leading-relaxed'>
-                I believe that the best designs are those that feel inevitable—as if they&apos;ve always been there, waiting to be discovered.
+          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full max-w-[900px] px-4 sm:px-6 md:pl-6 lg:pl-8 text-center md:text-left space-y-6'>
+            <div className='bg-[#d5d5c8]/10 p-6 rounded-lg border border-[#d5d5c8]/20'>
+              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed italic'>
+                &ldquo;Design should hold you, not overwhelm you.&rdquo;
               </p>
             </div>
+            
+            <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
+              Every space I design is a reflection of this philosophy. It&apos;s about creating environments that support and nurture, rather than dominate and distract.
+            </p>
+            
+            <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
+              I believe that the best designs are those that feel inevitable—as if they&apos;ve always been there, waiting to be discovered.
+            </p>
           </div>
 
           {/* image 2 */}
@@ -111,15 +125,15 @@ export default function Story() {
           </div>
 
           {/* text content 3 */}
-          <div className='lg:max-w-[900px] lg:min-w-[900px] lg:pl-10 w-full max-w-[900px] px-4 sm:px-6'>
-            <h1 className='text-[#d5d5c8] font-serif text-[24px] uppercase tracking-wider leading-tight text-left'>OUR STORY</h1>
+          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full max-w-[900px] px-4 sm:px-6 md:pl-6 lg:pl-8 text-center md:text-left space-y-6'>
+            <h1 className='text-[#d5d5c8] font-serif text-[24px] uppercase tracking-wider leading-tight'>OUR STORY</h1>
             
-            <div className='mt-8 space-y-3'>
-              <p className='text-[#d5d5c8] font-[300] text-[16px] leading-[1.5] text-left'>
+            <div className='space-y-4'>
+              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
                 Nature has been my greatest teacher. The way light filters through leaves, how stone ages gracefully, the rhythm of seasons—these are the patterns I bring into every design.
               </p>
               
-              <p className='text-[#d5d5c8] font-[300] text-[16px] leading-[1.5] text-left'>
+              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
                 I&apos;ve learned that the most beautiful spaces are those that honor these natural rhythms and create harmony between the built environment and the world around us.
               </p>
             </div>
@@ -133,19 +147,19 @@ export default function Story() {
           </div>
 
           {/* text content 4 */}
-          <div className='lg:max-w-[900px] lg:min-w-[900px] lg:pl-4 w-full max-w-[900px] px-4 sm:px-6'>
-            <div className='mt-8 space-y-6'>
+          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full max-w-[900px] px-4 sm:px-6 md:pl-6 lg:pl-8 text-center md:text-left space-y-6'>
+            <div className='space-y-6'>
               <div className='bg-[#d5d5c8]/10 p-6 rounded-lg border border-[#d5d5c8]/20'>
-                <p className='text-[#d5d5c8] font-[300] text-[16px] leading-relaxed'>
+                <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed italic'>
                   &ldquo;How should this space make you feel?&rdquo;
                 </p>
               </div>
               
-              <p className='text-[#d5d5c8] font-[300] text-[16px] leading-relaxed'>
+              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
                 This question is the foundation of my design process. Before I draw a single line or choose a material, I need to understand the emotional journey you want to experience.
               </p>
               
-              <p className='text-[#d5d5c8] font-[300] text-[16px] leading-relaxed'>
+              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
                 Whether it&apos;s a sense of calm, inspiration, connection, or joy—every design decision serves that feeling. The result is spaces that don&apos;t just look beautiful, but feel right.
               </p>
             </div>
@@ -159,19 +173,19 @@ export default function Story() {
           </div>
 
           {/* final text content */}
-          <div className='lg:max-w-[900px] lg:min-w-[900px] lg:pl-0 w-full max-w-[900px] px-0 sm:px-0'>
-            <div className='mt-8 space-y-6'>
-              <p className='text-[#d5d5c8] font-[300] text-[16px] leading-relaxed'>
+          <div className='lg:max-w-[900px] lg:min-w-[900px] w-full max-w-[900px] px-4 sm:px-6 md:pl-6 lg:pl-8 text-center md:text-left space-y-6'>
+            <div className='space-y-6'>
+              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
                 My story is one of continuous learning and deepening understanding. Every project teaches me something new about how spaces can serve, inspire, and transform the people who inhabit them.
               </p>
               
               <div className='bg-[#d5d5c8]/10 p-6 rounded-lg border border-[#d5d5c8]/20'>
-                <p className='text-[#d5d5c8] font-[300] text-[16px] leading-relaxed'>
+                <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed italic'>
                   &ldquo;That feeling guides every decision.&rdquo;
                 </p>
               </div>
               
-              <p className='text-[#d5d5c8] font-[300] text-[16px] leading-relaxed'>
+              <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
                 This is my promise to you: every space I design will be guided by feeling, rooted in nature, and created with the intention to hold you gently, not overwhelm you.
               </p>
             </div>
