@@ -94,7 +94,7 @@ export default function Story() {
               </div>
               
               <p className='text-[#d5d5c8] font-[300] text-[16px] leading-relaxed'>
-                Every space I design is a reflection of this philosophy. It's about creating environments that support and nurture, rather than dominate and distract.
+                Every space I design is a reflection of this philosophy. It&apos;s about creating environments that support and nurture, rather than dominate and distract.
               </p>
               
               <p className='text-[#d5d5c8] font-[300] text-[16px] leading-relaxed'>
