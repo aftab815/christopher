@@ -23,12 +23,9 @@ export default function Projects() {
 
   const handleScrollChange = () => {
     // Scroll change handler for future use
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
   };
 
-  const scrollToStart = () => {
-    scrollContainerRef.current?.resetScroll();
-  };
+  // Removed unused scrollToStart function
 
   return (
     <div className='relative min-h-screen overflow-hidden'>
@@ -96,7 +93,7 @@ export default function Projects() {
             <div className='space-y-2 mx-auto md:mx-0 max-w-[90%] md:max-w-full'>
               <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
                 Nestled in a field of wildflowers, The Meadow is a celebration of organic forms and natural light. The
-                structure's gentle curves and warm wood tones create a sense of movement that mirrors the surrounding
+                structure&apos;s gentle curves and warm wood tones create a sense of movement that mirrors the surrounding
                 landscape.
               </p>
 
@@ -113,7 +110,7 @@ export default function Projects() {
                 </div>
 
                 <p className='text-[#d5d5c8] font-[300] text-base leading-relaxed'>
-                  Interested in working together? We'd love to hear about your project.
+                  Interested in working together? We&apos;d love to hear about your project.
                 </p>
 
                 <Link

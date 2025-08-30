@@ -25,7 +25,6 @@ export default function Story() {
     scrollContainerRef.current?.resetScroll();
   };
   
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleScrollChange = () => {
     // Scroll change handler for future use
   };
